@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="content">
+        <form class="form-login" id="form-login" autocomplete="off">
+            <div class="d-flex justify-content-center">
+                <img class="icon-login" src="assets/images/icon-login.png">
+            </div>
+            <div class="form-outline mb-4">
+                <label class="form-label">Usuario</label>
+                <input type="text" id="username" name="username"
+                    class="form-control" [(ngModel)]="username"
+                    [ngClass]="{'invalid-input': usernameIsEmpty}"
+                    autocomplete="off" readonly
+                    onfocus="this.removeAttribute('readonly');" />
+            </div>
+
+            <div class="form-outline mb-4">
+                <label class="form-label">Contraseña</label>
+                <input type="password" id="password" name="password"
+                    class="form-control" [(ngModel)]="password"
+                    [ngClass]="{'invalid-input': passwordIsEmpty}"
+                    autocomplete="off" readonly
+                    onfocus="this.removeAttribute('readonly');" />
+            </div>
+
+            <div class="row mb-4">
+                <div class="col d-flex justify-content-center">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value
+                            id="rememberMe" checked />
+                        <label class="form-check-label"> Recuérdame </label>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <a href="#!">¿Olvidaste tu contraseña?</a>
+                </div>
+            </div>
+            <div *ngIf="showSpinner">
+                <app-spinner></app-spinner>
+            </div>
+            <div class="mb-4 d-flex justify-content-center">
+                <button type="submit"
+                    class="btn btn-primary btn-block mb-4 w-100"
+                    (click)="onLogin()">Iniciar
+                    sesión</button>
+            </div>
+            <div *ngIf="showError" class="text-danger text-center fs-4">
+                {{ errorMessage }}
+            </div>
+        </form>
+    </div>
+</div>

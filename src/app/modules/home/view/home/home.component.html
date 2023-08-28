@@ -1,0 +1,30 @@
+<div class="header">
+    <span class="menu-icon" (click)="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </span>
+    <div class="logo-text">
+        <img src="assets/images/icon-product.png" class="logo-icon">
+        <span class="logo-title">Proximate Products</span>
+    </div>
+</div>
+<div class="main-container">
+    <app-sidebar [isExpanded]="isSidebarExpanded" [nameUser]="nameUser"
+        [products]="products" [menuItems]="menuItems"
+        (toggleSidebar)="toggleSidebar()"></app-sidebar>
+    <div class="content" id="content">
+        <h1 class="text-center">Inicio</h1>
+        <div class="row">
+            <div class="col-md-6 col-sm-12 border-top p-3 border-dark"
+                *ngFor="let product of products">
+                <div (click)="showProduct(product.id)">
+                    <h3 class="fs-2 mt-5">{{ product.title }}</h3>
+                    <img [src]="product.image" class="product-image mt-3"
+                        (error)="handleImageError($event)">
+                    <p class="fs-5">{{ product.shortDescription }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<app-footer></app-footer>

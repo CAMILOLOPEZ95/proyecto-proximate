@@ -1,0 +1,18 @@
+<div class="sidebar sidebar-container"
+    [ngClass]="{'expanded': isExpanded, 'collapsed': !isExpanded }">
+    <div class="sidebar-content ">
+        <ul class="items">
+            <li id="nameUser" class="expanded">{{ nameUser }}</li>
+        </ul>
+        <ul class="menu">
+            <li id="home" class="expanded mt-5" [routerLink]="['/home']"
+                [queryParams]="queryParams">Inicio</li>
+            <li *ngFor="let menuItem of menuItems" class="expanded mt-1">{{
+                getProductTitle(menuItem.productId) }}</li>
+        </ul>
+        <ul class="items logout">
+            <li id="logout" class="expanded logout btn btn-dark mt-5"
+                (click)="logout()">Cerrar Sesión</li>
+        </ul>
+    </div>
+</div>

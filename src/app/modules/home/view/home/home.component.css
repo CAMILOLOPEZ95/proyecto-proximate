@@ -1,0 +1,86 @@
+.header {
+    background-color: #84A7A1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.logo-text {
+    display: flex;
+    align-items: center;
+}
+
+.logo-title {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+
+.main-container {
+    display: flex;
+    margin-top: 60px;
+}
+
+.content {
+    /*margin: 100px;*/
+    flex: 1;
+    padding: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
+    background-color: #fff;
+}
+
+.menu-icon {
+    color: #000;
+    /* Color del icono */
+    cursor: pointer;
+    padding: 5px;
+    font-size: 20px;
+    display: inline-block;
+    /* Para que ocupe solo el espacio del icono */
+}
+
+.product-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: -10px;
+    /* Compensar el padding de las tarjetas */
+}
+
+.product-card {
+    /*width: calc(33.33% - 20px);/ Ajustar el ancho para tres tarjetas por fila */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    /* Espacio entre las tarjetas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.product-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}
